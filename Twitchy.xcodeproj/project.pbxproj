@@ -7,21 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		232AE310CA5913EFAFD1A9DC /* Pods_Twitchy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327691B4D5C56AA37AF5CAE0 /* Pods_Twitchy.framework */; };
 		701677451DD415500049063D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701677441DD415500049063D /* AppDelegate.swift */; };
-		701677471DD415500049063D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701677461DD415500049063D /* ViewController.swift */; };
+		701677471DD415500049063D /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701677461DD415500049063D /* GamesViewController.swift */; };
 		7016774A1DD415500049063D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 701677481DD415500049063D /* Main.storyboard */; };
 		7016774C1DD415500049063D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7016774B1DD415500049063D /* Assets.xcassets */; };
 		7016774F1DD415500049063D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7016774D1DD415500049063D /* LaunchScreen.storyboard */; };
+		7016775B1DD681E70049063D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016775A1DD681E70049063D /* Constants.swift */; };
+		7016775D1DD683440049063D /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016775C1DD683440049063D /* ChannelsViewController.swift */; };
+		7016775F1DD686640049063D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016775E1DD686640049063D /* Game.swift */; };
+		706CE78A1DD6A79100AC9198 /* GameDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CE7891DD6A79100AC9198 /* GameDataService.swift */; };
+		706CE78D1DD6B76F00AC9198 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CE78C1DD6B76F00AC9198 /* GameCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		327691B4D5C56AA37AF5CAE0 /* Pods_Twitchy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitchy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4658908F2CC2976FE70496ED /* Pods-Twitchy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitchy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twitchy/Pods-Twitchy.debug.xcconfig"; sourceTree = "<group>"; };
 		701677411DD415500049063D /* Twitchy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitchy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		701677441DD415500049063D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		701677461DD415500049063D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		701677461DD415500049063D /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
 		701677491DD415500049063D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7016774B1DD415500049063D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7016774E1DD415500049063D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		701677501DD415500049063D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7016775A1DD681E70049063D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7016775C1DD683440049063D /* ChannelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
+		7016775E1DD686640049063D /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		706CE7891DD6A79100AC9198 /* GameDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDataService.swift; sourceTree = "<group>"; };
+		706CE78C1DD6B76F00AC9198 /* GameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
+		B43F69E6CB969EDB4366F217 /* Pods-Twitchy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitchy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twitchy/Pods-Twitchy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				232AE310CA5913EFAFD1A9DC /* Pods_Twitchy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +55,8 @@
 			children = (
 				701677431DD415500049063D /* Twitchy */,
 				701677421DD415500049063D /* Products */,
+				83861DB1B5F0D951508A52DA /* Pods */,
+				8F6C04B75E1B7CAA9AFB6D03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +71,76 @@
 		701677431DD415500049063D /* Twitchy */ = {
 			isa = PBXGroup;
 			children = (
+				701677561DD6817E0049063D /* Utilities */,
+				706CE78B1DD6A79A00AC9198 /* Services */,
+				701677571DD681A70049063D /* Model */,
+				701677581DD681AE0049063D /* View */,
+				701677591DD681B30049063D /* Controller */,
 				701677441DD415500049063D /* AppDelegate.swift */,
-				701677461DD415500049063D /* ViewController.swift */,
-				701677481DD415500049063D /* Main.storyboard */,
 				7016774B1DD415500049063D /* Assets.xcassets */,
-				7016774D1DD415500049063D /* LaunchScreen.storyboard */,
 				701677501DD415500049063D /* Info.plist */,
 			);
 			path = Twitchy;
+			sourceTree = "<group>";
+		};
+		701677561DD6817E0049063D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7016775A1DD681E70049063D /* Constants.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		701677571DD681A70049063D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7016775E1DD686640049063D /* Game.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		701677581DD681AE0049063D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7016774D1DD415500049063D /* LaunchScreen.storyboard */,
+				701677481DD415500049063D /* Main.storyboard */,
+				706CE78C1DD6B76F00AC9198 /* GameCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		701677591DD681B30049063D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				701677461DD415500049063D /* GamesViewController.swift */,
+				7016775C1DD683440049063D /* ChannelsViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		706CE78B1DD6A79A00AC9198 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				706CE7891DD6A79100AC9198 /* GameDataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		83861DB1B5F0D951508A52DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4658908F2CC2976FE70496ED /* Pods-Twitchy.debug.xcconfig */,
+				B43F69E6CB969EDB4366F217 /* Pods-Twitchy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8F6C04B75E1B7CAA9AFB6D03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				327691B4D5C56AA37AF5CAE0 /* Pods_Twitchy.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 701677531DD415500049063D /* Build configuration list for PBXNativeTarget "Twitchy" */;
 			buildPhases = (
+				B78EC6E940E8F220444C0AD3 /* [CP] Check Pods Manifest.lock */,
 				7016773D1DD415500049063D /* Sources */,
 				7016773E1DD415500049063D /* Frameworks */,
 				7016773F1DD415500049063D /* Resources */,
+				71DD111ABE0A2D43213BC42F /* [CP] Embed Pods Frameworks */,
+				E1502C4F9D11476ACDE96A91 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,6 +179,7 @@
 					701677401DD415500049063D = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = WRD8ABT3AF;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -132,13 +215,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		71DD111ABE0A2D43213BC42F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Twitchy/Pods-Twitchy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B78EC6E940E8F220444C0AD3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E1502C4F9D11476ACDE96A91 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Twitchy/Pods-Twitchy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7016773D1DD415500049063D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				701677471DD415500049063D /* ViewController.swift in Sources */,
+				701677471DD415500049063D /* GamesViewController.swift in Sources */,
+				7016775F1DD686640049063D /* Game.swift in Sources */,
 				701677451DD415500049063D /* AppDelegate.swift in Sources */,
+				706CE78A1DD6A79100AC9198 /* GameDataService.swift in Sources */,
+				7016775D1DD683440049063D /* ChannelsViewController.swift in Sources */,
+				7016775B1DD681E70049063D /* Constants.swift in Sources */,
+				706CE78D1DD6B76F00AC9198 /* GameCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +318,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -231,6 +368,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -257,7 +395,9 @@
 		};
 		701677541DD415500049063D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4658908F2CC2976FE70496ED /* Pods-Twitchy.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WRD8ABT3AF;
 				INFOPLIST_FILE = Twitchy/Info.plist;
@@ -270,7 +410,9 @@
 		};
 		701677551DD415500049063D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B43F69E6CB969EDB4366F217 /* Pods-Twitchy.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WRD8ABT3AF;
 				INFOPLIST_FILE = Twitchy/Info.plist;
@@ -300,6 +442,7 @@
 				701677551DD415500049063D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
