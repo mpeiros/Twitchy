@@ -14,10 +14,13 @@
 		7016774C1DD415500049063D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7016774B1DD415500049063D /* Assets.xcassets */; };
 		7016774F1DD415500049063D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7016774D1DD415500049063D /* LaunchScreen.storyboard */; };
 		7016775B1DD681E70049063D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016775A1DD681E70049063D /* Constants.swift */; };
-		7016775D1DD683440049063D /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016775C1DD683440049063D /* ChannelsViewController.swift */; };
+		7016775D1DD683440049063D /* StreamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016775C1DD683440049063D /* StreamsViewController.swift */; };
 		7016775F1DD686640049063D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016775E1DD686640049063D /* Game.swift */; };
 		706CE78A1DD6A79100AC9198 /* GameDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CE7891DD6A79100AC9198 /* GameDataService.swift */; };
 		706CE78D1DD6B76F00AC9198 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CE78C1DD6B76F00AC9198 /* GameCell.swift */; };
+		706CE78F1DD94D9D00AC9198 /* StreamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CE78E1DD94D9D00AC9198 /* StreamCell.swift */; };
+		706CE7911DD959A200AC9198 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CE7901DD959A200AC9198 /* Stream.swift */; };
+		706CE7931DD95C1400AC9198 /* StreamDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CE7921DD95C1400AC9198 /* StreamDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +34,13 @@
 		7016774E1DD415500049063D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		701677501DD415500049063D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7016775A1DD681E70049063D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		7016775C1DD683440049063D /* ChannelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
+		7016775C1DD683440049063D /* StreamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamsViewController.swift; sourceTree = "<group>"; };
 		7016775E1DD686640049063D /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		706CE7891DD6A79100AC9198 /* GameDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDataService.swift; sourceTree = "<group>"; };
 		706CE78C1DD6B76F00AC9198 /* GameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
+		706CE78E1DD94D9D00AC9198 /* StreamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamCell.swift; sourceTree = "<group>"; };
+		706CE7901DD959A200AC9198 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		706CE7921DD95C1400AC9198 /* StreamDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamDataService.swift; sourceTree = "<group>"; };
 		B43F69E6CB969EDB4366F217 /* Pods-Twitchy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitchy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twitchy/Pods-Twitchy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				7016775E1DD686640049063D /* Game.swift */,
+				706CE7901DD959A200AC9198 /* Stream.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 				7016774D1DD415500049063D /* LaunchScreen.storyboard */,
 				701677481DD415500049063D /* Main.storyboard */,
 				706CE78C1DD6B76F00AC9198 /* GameCell.swift */,
+				706CE78E1DD94D9D00AC9198 /* StreamCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -113,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				701677461DD415500049063D /* GamesViewController.swift */,
-				7016775C1DD683440049063D /* ChannelsViewController.swift */,
+				7016775C1DD683440049063D /* StreamsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -122,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				706CE7891DD6A79100AC9198 /* GameDataService.swift */,
+				706CE7921DD95C1400AC9198 /* StreamDataService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -272,9 +281,12 @@
 				7016775F1DD686640049063D /* Game.swift in Sources */,
 				701677451DD415500049063D /* AppDelegate.swift in Sources */,
 				706CE78A1DD6A79100AC9198 /* GameDataService.swift in Sources */,
-				7016775D1DD683440049063D /* ChannelsViewController.swift in Sources */,
+				7016775D1DD683440049063D /* StreamsViewController.swift in Sources */,
 				7016775B1DD681E70049063D /* Constants.swift in Sources */,
 				706CE78D1DD6B76F00AC9198 /* GameCell.swift in Sources */,
+				706CE7931DD95C1400AC9198 /* StreamDataService.swift in Sources */,
+				706CE7911DD959A200AC9198 /* Stream.swift in Sources */,
+				706CE78F1DD94D9D00AC9198 /* StreamCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

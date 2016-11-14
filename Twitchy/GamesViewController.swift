@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GamesViewController.swift
 //  Twitchy
 //
 //  Created by Max Peiros on 11/9/16.
@@ -35,23 +35,39 @@ class GamesViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath) as! GameCell
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath) as? GameCell {
+            
+            let game = GameDataService.instance.games[indexPath.row]
+            cell.configureCell(game: game)
+            
+            return cell
         
-        let game = GameDataService.instance.games[indexPath.row]
-        
-        cell.configureCell(game: game)
-        
-        return cell
+        } else {
+            return GameCell()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let game = GameDataService.instance.games[indexPath.row]
         
+        performSegue(withIdentifier: "showStreamsVC", sender: game)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (gamesCollectionView.bounds.width / 2) - 15
         let height = width * (4 / 3)
         return CGSize(width: width, height: height)
+    }
+    
+    // Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showStreamsVC" {
+            if let streamsVC = segue.destination as? StreamsViewController {
+                if let game = sender as? Game {
+                    streamsVC.game = game
+                }
+            }
+        }
     }
 
 }

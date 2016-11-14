@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -68,17 +70,17 @@
                     <navigationItem key="navigationItem" id="jqd-W5-Gd3"/>
                     <connections>
                         <outlet property="gamesCollectionView" destination="aw9-Vf-hu5" id="uIl-LD-FOY"/>
-                        <segue destination="YGV-MO-aJR" kind="show" identifier="showChannelsVC" id="G3i-2b-RF0"/>
+                        <segue destination="YGV-MO-aJR" kind="show" identifier="showStreamsVC" id="G3i-2b-RF0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="965.60000000000002" y="35.532233883058474"/>
         </scene>
-        <!--Channels View Controller-->
+        <!--Streams View Controller-->
         <scene sceneID="r70-at-lQz">
             <objects>
-                <viewController id="YGV-MO-aJR" customClass="ChannelsViewController" customModule="Twitchy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YGV-MO-aJR" customClass="StreamsViewController" customModule="Twitchy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ecy-n4-hpx"/>
                         <viewControllerLayoutGuide type="bottom" id="4em-rX-tQR"/>
@@ -86,8 +88,78 @@
                     <view key="view" contentMode="scaleToFill" id="z1P-ik-lBt">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kTQ-v0-Xfq">
+                                <rect key="frame" x="0.0" y="8" width="375" height="595"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="streamCell" rowHeight="200" id="iOS-Bx-bw6" customClass="StreamCell" customModule="Twitchy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iOS-Bx-bw6" id="HUr-Se-UmI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qX0-6B-Fp1">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="192"/>
+                                                    <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gOB-2U-ePS">
+                                                    <rect key="frame" x="16" y="106" width="179.5" height="77.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Broadcaster" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fhj-VJ-T3a">
+                                                            <rect key="frame" x="0.0" y="0.0" width="179.5" height="26.5"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stream Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xJV-Ve-tqe">
+                                                            <rect key="frame" x="0.0" y="26.5" width="179.5" height="27"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viewers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OVZ-ds-1XG">
+                                                            <rect key="frame" x="0.0" y="53.5" width="179.5" height="24"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qX0-6B-Fp1" firstAttribute="leading" secondItem="HUr-Se-UmI" secondAttribute="leading" constant="8" id="2fj-PW-4vS"/>
+                                                <constraint firstItem="gOB-2U-ePS" firstAttribute="width" secondItem="qX0-6B-Fp1" secondAttribute="width" multiplier="0.5" id="A9y-Yx-nTL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gOB-2U-ePS" secondAttribute="bottom" constant="8" id="D1C-De-ctU"/>
+                                                <constraint firstAttribute="bottom" secondItem="qX0-6B-Fp1" secondAttribute="bottom" constant="8" id="LYs-uR-VB8"/>
+                                                <constraint firstAttribute="trailing" secondItem="qX0-6B-Fp1" secondAttribute="trailing" constant="8" id="MSR-MY-w5w"/>
+                                                <constraint firstItem="gOB-2U-ePS" firstAttribute="leading" secondItem="HUr-Se-UmI" secondAttribute="leadingMargin" constant="8" id="WCh-mR-t1G"/>
+                                                <constraint firstItem="gOB-2U-ePS" firstAttribute="height" secondItem="qX0-6B-Fp1" secondAttribute="height" multiplier="0.4" id="oDc-AK-2Kx"/>
+                                                <constraint firstItem="qX0-6B-Fp1" firstAttribute="top" secondItem="HUr-Se-UmI" secondAttribute="top" id="zK3-5g-Jbc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="broadcasterName" destination="fhj-VJ-T3a" id="P1a-5h-5qH"/>
+                                            <outlet property="streamImageView" destination="qX0-6B-Fp1" id="evg-jb-ymY"/>
+                                            <outlet property="streamTitle" destination="xJV-Ve-tqe" id="Ag9-uE-biY"/>
+                                            <outlet property="streamViewers" destination="OVZ-ds-1XG" id="36m-va-71Z"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kTQ-v0-Xfq" secondAttribute="trailing" id="DTR-2b-IHc"/>
+                            <constraint firstItem="kTQ-v0-Xfq" firstAttribute="leading" secondItem="z1P-ik-lBt" secondAttribute="leading" id="HF0-Gi-Dy0"/>
+                            <constraint firstItem="4em-rX-tQR" firstAttribute="top" secondItem="kTQ-v0-Xfq" secondAttribute="bottom" id="KZk-7X-vWM"/>
+                            <constraint firstItem="kTQ-v0-Xfq" firstAttribute="top" secondItem="ecy-n4-hpx" secondAttribute="bottom" constant="8" id="r0r-nm-4aU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="streamsTableView" destination="kTQ-v0-Xfq" id="Yxf-pj-1AG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T8l-P8-oNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,6 +173,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="dtt-zm-BzK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

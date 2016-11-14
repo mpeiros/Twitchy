@@ -20,7 +20,9 @@ class GameDataService {
     }
     
     func downloadTopGames(completed: @escaping DownloadComplete) {
-        let url = TWITCH_BASE_URL + TWITCH_TOP_GAMES + TWITCH_CLIENT_ID
+        var nameForInit, imageUrlForInit: String!
+        
+        let url = TWITCH_URL_TOP_GAMES
         
         Alamofire.request(url).responseJSON { (response) in
             
@@ -32,15 +34,21 @@ class GameDataService {
                         
                         if let gameDict = topGamesArray[i]["game"] as? Dictionary<String, AnyObject> {
                             
+                            if let gameName = gameDict["name"] as? String {
+                                nameForInit = gameName
+                            }
+                            
                             if let boxArt = gameDict["box"] as? Dictionary<String, AnyObject> {
                                 
+                                
                                 if let imageUrl = boxArt["large"] as? String {
-                                    
-                                    let game = Game(imageUrl: imageUrl)
-                                    self._games.append(game)
+                                    imageUrlForInit = imageUrl
                                 }
                             }
                         }
+                        
+                        let game = Game(name: nameForInit, imageUrl: imageUrlForInit)
+                        self._games.append(game)
                     }
                 }
             }

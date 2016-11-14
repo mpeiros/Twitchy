@@ -11,8 +11,13 @@ import Alamofire
 
 class Game: NSObject {
     
+    fileprivate var _gameName: String!
     fileprivate var _gameImageUrl: String!
     fileprivate var _gameImage: UIImage?
+    
+    var gameName: String {
+        return _gameName
+    }
     
     var gameImageUrl: String {
         return _gameImageUrl
@@ -22,7 +27,8 @@ class Game: NSObject {
         return _gameImage
     }
     
-    init(imageUrl: String) {
+    init(name: String, imageUrl: String) {
+        self._gameName = name
         self._gameImageUrl = imageUrl
     }
     
