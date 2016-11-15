@@ -63,4 +63,32 @@ class StreamsViewController: UIViewController, UITableViewDelegate, UITableViewD
         return (streamsTableView.bounds.width / 16) * 9
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let stream = StreamDataService.instance.streams[indexPath.row]
+        
+        openStreamInTwitchApp(stream)
+    }
+    
+    // Mobile Deep Link
+    func openStreamInTwitchApp(_ stream: Stream) {
+        let ac = UIAlertController(title: "Open stream in Twitch app?", message: "Note that you must have the Twitch app installed", preferredStyle: .alert)
+        
+        let openAction = UIAlertAction(title: "Yes", style: .default) { action in
+            
+            let streamString = TWITCH_URL_STREAM_DEEP_LINK + stream.broadcasterName
+            let streamUrl = URL(string: streamString)!
+            
+            if UIApplication.shared.canOpenURL(streamUrl) {
+                UIApplication.shared.open(streamUrl, options: [:], completionHandler: nil)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        ac.addAction(cancelAction)
+        ac.addAction(openAction)
+        
+        present(ac, animated: true, completion: nil)
+    }
+    
 }

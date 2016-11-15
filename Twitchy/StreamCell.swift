@@ -18,7 +18,11 @@ class StreamCell: UITableViewCell {
     func configureCell(stream: Stream) {
         broadcasterName.text = stream.broadcasterName
         streamTitle.text = stream.streamTitle
-        streamViewers.text = "\(stream.streamViewerCount)"
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        
+        streamViewers.text = "\(formatter.string(from: NSNumber(value: stream.streamViewerCount))!) viewers"
         
         if stream.streamImage != nil {
             streamImageView.image = stream.streamImage
