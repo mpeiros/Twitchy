@@ -21,6 +21,10 @@ class StreamsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         streamsTableView.delegate = self
         streamsTableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         StreamDataService.instance.downloadStreamsForGame(game) {
             for stream in StreamDataService.instance.streams {
@@ -65,30 +69,51 @@ class StreamsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let stream = StreamDataService.instance.streams[indexPath.row]
-        
-        openStreamInTwitchApp(stream)
+    
+        openStream(stream)
     }
     
-    // Mobile Deep Link
-    func openStreamInTwitchApp(_ stream: Stream) {
-        let ac = UIAlertController(title: "Open stream in Twitch app?", message: "Note that you must have the Twitch app installed", preferredStyle: .alert)
+    // Helper function to open stream in chosen app
+    func openStream(_ stream: Stream) {
+        let alert = UIAlertController(title: "Open stream in Twitchy or in official Twitch app?", message: "Official Twitch app must be installed for latter option.", preferredStyle: .alert)
         
-        let openAction = UIAlertAction(title: "Yes", style: .default) { action in
-            
-            let streamString = TWITCH_URL_STREAM_DEEP_LINK + stream.broadcasterName
-            let streamUrl = URL(string: streamString)!
-            
-            if UIApplication.shared.canOpenURL(streamUrl) {
-                UIApplication.shared.open(streamUrl, options: [:], completionHandler: nil)
-            }
+        let openInTwitchyAction = UIAlertAction(title: "Twitchy", style: .default) { action in
+            self.performSegue(withIdentifier: "showChannelVC", sender: stream)
+        }
+        
+        let openInTwitchAppAction = UIAlertAction(title: "Twitch", style: .default) { action in
+            self.openStreamInTwitchApp(stream)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
-        ac.addAction(cancelAction)
-        ac.addAction(openAction)
+        alert.addAction(openInTwitchyAction)
+        alert.addAction(openInTwitchAppAction)
+        alert.addAction(cancelAction)
         
-        present(ac, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showChannelVC" {
+            if let channelVC = segue.destination as? ChannelViewController {
+                if let stream = sender as? Stream {
+                    channelVC.stream = stream
+                }
+            }
+        }
+    }
+    
+    // Mobile Deep Link
+    func openStreamInTwitchApp(_ stream: Stream) {
+        let streamString = TWITCH_URL_STREAM_DEEP_LINK + stream.broadcasterName
+        
+        if let streamUrl = URL(string: streamString) {
+            if UIApplication.shared.canOpenURL(streamUrl) {
+                UIApplication.shared.open(streamUrl, options: [:], completionHandler: nil)
+            }
+        }
     }
     
 }
