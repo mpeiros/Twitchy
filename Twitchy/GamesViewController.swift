@@ -15,10 +15,10 @@ class GamesViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Games"
+        
         gamesCollectionView.delegate = self
         gamesCollectionView.dataSource = self
-        
-        title = "Games"
         
         GameDataService.instance.downloadTopGames {
             for game in GameDataService.instance.games {

@@ -21,6 +21,7 @@
 		706CE78F1DD94D9D00AC9198 /* StreamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CE78E1DD94D9D00AC9198 /* StreamCell.swift */; };
 		706CE7911DD959A200AC9198 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CE7901DD959A200AC9198 /* Stream.swift */; };
 		706CE7931DD95C1400AC9198 /* StreamDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CE7921DD95C1400AC9198 /* StreamDataService.swift */; };
+		706CE7951DDAD9C700AC9198 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706CE7941DDAD9C700AC9198 /* ChannelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		706CE78E1DD94D9D00AC9198 /* StreamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamCell.swift; sourceTree = "<group>"; };
 		706CE7901DD959A200AC9198 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		706CE7921DD95C1400AC9198 /* StreamDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamDataService.swift; sourceTree = "<group>"; };
+		706CE7941DDAD9C700AC9198 /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		B43F69E6CB969EDB4366F217 /* Pods-Twitchy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitchy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twitchy/Pods-Twitchy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 			children = (
 				701677461DD415500049063D /* GamesViewController.swift */,
 				7016775C1DD683440049063D /* StreamsViewController.swift */,
+				706CE7941DDAD9C700AC9198 /* ChannelViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				7016775D1DD683440049063D /* StreamsViewController.swift in Sources */,
 				7016775B1DD681E70049063D /* Constants.swift in Sources */,
 				706CE78D1DD6B76F00AC9198 /* GameCell.swift in Sources */,
+				706CE7951DDAD9C700AC9198 /* ChannelViewController.swift in Sources */,
 				706CE7931DD95C1400AC9198 /* StreamDataService.swift in Sources */,
 				706CE7911DD959A200AC9198 /* Stream.swift in Sources */,
 				706CE78F1DD94D9D00AC9198 /* StreamCell.swift in Sources */,
